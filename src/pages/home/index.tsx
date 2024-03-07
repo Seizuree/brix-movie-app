@@ -14,12 +14,12 @@ import { MovieDataType } from '../../assets/data'
 import { MovieContext } from '../../context/movie-context'
 
 const Home = () => {
-  const [search, setSearch] = useState('')
   const [searchList, setSearchList] = useState<MovieDataType[]>([])
   const { state } = useContext(MovieContext)
   const { movies } = state
   const trendingList = movies.filter((item) => item.isTrending === true)
   const recommendedList = movies.filter((item) => item.isTrending !== true)
+  const [search, setSearch] = useState('')
   const handleSearch = (e: { target: { value: SetStateAction<string> } }) => {
     setSearch(e.target.value)
     const newList = movies.filter((movie) => movie.title.toLowerCase().includes(search.toLowerCase()))
@@ -40,7 +40,6 @@ const Home = () => {
             border: 'none',
           }}
         >
-          ;
           <InputBase
             placeholder="Search for movies or TV series"
             sx={{
