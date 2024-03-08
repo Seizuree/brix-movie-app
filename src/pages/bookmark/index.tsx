@@ -63,7 +63,7 @@ const Bookmark = () => {
         {search === '' ? (
           <Box width="100%">
             <Typography variant="h5" component="h1" my={6} fontWeight={400}>
-              TV Series
+              Bookmarks
             </Typography>
             <MovieList recommendedList={bookmarks}></MovieList>
           </Box>
